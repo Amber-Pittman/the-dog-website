@@ -86,7 +86,12 @@ class App extends Component {
 
         <ImgStyles>
           {this.state.images.map((image, index) => (
-            <img key={index} src={image} alt="Dog" data-pin-nopin="true" className="picture" />
+            <img key={index} 
+                 src={image} 
+                 alt="Dog" 
+                 data-pin-nopin="true" 
+                 className="picture" 
+              />
           ))}
         </ImgStyles>
       </>
