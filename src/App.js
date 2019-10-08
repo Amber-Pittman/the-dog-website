@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import React from 'react';
+// import axios from "axios";
 import styled from "styled-components";
 import { useLocalStorage } from './utils/input';
+import { useDogImages } from './utils/api';
 
 const ImgStyles = styled.div`
     display: flex;
@@ -19,24 +20,8 @@ const ImgStyles = styled.div`
 function App(props) {
   const [breed, setBreed] = useLocalStorage("breed", "husky"); //wrapped the hook in our custom hook
   const [count, setCount] =useLocalStorage("count", 1);
-  const [images, setImages] = useState([]);
+  const [images, /*setImages (not used here) */] = useDogImages(breed, count);
 
-  useEffect(() => {
-    // this.setState({ images: [] })
-    setImages([])
-    // re-fetch images with new state value
-    fetchDogImages()
-  }, [breed, count])
-
-  // const handleChange = (event) => { // MOVED INTO onCHANGE
-  //   // change the state here --- make our select field controlled by react state
-  //   // this.setState({
-  //   //   breed: event.target.value
-  //   // })
-  //     setBreed(event.target.value)
-  // }
-
-  
 
   return (
     <>
