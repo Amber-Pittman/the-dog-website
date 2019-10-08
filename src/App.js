@@ -41,7 +41,7 @@ function App(props) {
         setImages(result.data.message)
       })
       .catch(error => {
-        console.log("error: ", error)
+        console.log("Error getting API Dog Images: ", error)
       })
     }
 
