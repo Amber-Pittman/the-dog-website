@@ -16,7 +16,7 @@ const ImgStyles = styled.div`
 `;
 
 function App(props) {
-  const [breed, setBreed] = useState("husky");
+  const [breed, setBreed] = useInput("husky"); //wrapped the hook in our custom hook
   const [images, setImages] = useState([]);
 
   useEffect(() => {
